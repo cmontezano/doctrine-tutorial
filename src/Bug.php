@@ -30,6 +30,8 @@ class Bug
      */
     protected $status;
 
+    protected $products;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
