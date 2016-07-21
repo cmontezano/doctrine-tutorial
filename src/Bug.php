@@ -30,9 +30,20 @@ class Bug
      */
     protected $status;
 
-    protected $products = null;
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="assignedBugs")
+     */
     protected $engineer;
+
+    /**
+     * $ManyToOne(targetEntity="User", inversedBy="reportedBugs")
+     */
     protected $reporter;
+
+    /**
+     * ManyToMany(targetEntity="Product")
+     */
+    protected $products = null;
 
     public function __construct()
     {
