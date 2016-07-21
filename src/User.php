@@ -1,4 +1,6 @@
 <?php
+use Doctrine\Common\Collectons\ArrayCollection;
+
 /**
  * @Entity @Table(name="users")
  */
@@ -15,6 +17,15 @@ class User
      * @var string
      */
     protected $name;
+
+    protected $reportedBugs;
+    protected $assignedBugs;
+
+    public function __construct()
+    {
+        $this->reportedBugs = new ArrayCollection();
+        $this->assignedBugs = new ArrayCollection();
+    }
 
     public function getId()
     {
