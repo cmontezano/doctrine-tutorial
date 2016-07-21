@@ -1,4 +1,6 @@
 <?php
+use Doctrine\Common\Collectons\ArrayCollection;
+
 /**
  * @Entity(repositoryClass="BugRepository") @Table(name=bugs)
  */
@@ -27,6 +29,11 @@ class Bug
      * @var string
      */
     protected $status;
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
 
     public function getId()
     {
