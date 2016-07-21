@@ -30,7 +30,7 @@ class Bug
      */
     protected $status;
 
-    protected $products;
+    protected $products = null;
     protected $engineer;
     protected $reporter;
 
@@ -94,5 +94,15 @@ class Bug
     public function getReporter()
     {
         return $this->reporter;
+    }
+
+    public function assignToProducts($product)
+    {
+        $this->products[] = $product;
+    }
+
+    public function getProducts()
+    {
+        return $this->products;
     }
 }
